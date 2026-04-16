@@ -1,0 +1,191 @@
+section > .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Yan yana 2'li düzen */
+  gap: 32px; /* Kartlar arası boşluk */
+}
+
+/* --- Tekil Kart Stilleri --- */
+.product-hero-card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--gray-100);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Tüm kartların boyunu eşitler */
+}
+
+.product-hero-card:hover {
+  box-shadow: 0 8px 24px var(--navy-800);
+  transform: translateY(-4px);
+  
+}
+
+.product-hero-card .card-top {
+  background: linear-gradient(135deg, var(--navy-800), var(--navy-600));
+  padding: 32px 24px;
+  display: flex;
+  align-items: center;
+  gap: 32px; /* 2'li düzende daha ferah boşluk */
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px 30px 0 0; /* Sadece üst köşeleri yuvarla */
+}
+
+.product-hero-card .card-top::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 250px; height: 250px;
+  background: radial-gradient(circle, rgba(245,166,35,0.12) 0%, transparent 65%);
+}
+
+.product-main-icon {
+  width: 96px; height: 96px; /* Orijinal büyük ikon boyutu */
+  background: rgb(252, 252, 252);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.6rem;
+  flex-shrink: 0;
+}
+
+.product-main-icon img.product-icon-img {
+  width: 96px; /* Orijinal görsel boyutu */
+  height: 96px;
+  display:block;
+  object-fit: contain;
+  border-radius: 23px;
+}
+.product-main-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.7rem; /* Orijinal büyük başlık */
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.product-main-sub {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.4;
+}
+
+.product-hero-card .card-bottom {
+  padding: 40px 48px; /* 2'li tasarıma uygun genişletilmiş iç boşluk */
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+}
+
+.product-hero-card .card-bottom p {
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+.feature-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.feature-tag {
+  padding: 6px 16px;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-100);
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gray-600);
+}
+
+/* Butonları içerik fark etmeksizin alta hizalar */
+.product-hero-card .card-bottom .btn {
+  margin-top: auto; 
+}
+
+/* --- Özel Geliştirme Bölümü --- */
+.custom-section {
+  background: var(--gray-200);
+  border-radius: var(--radius-xl);
+  padding: 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  border: 1px solid var(--gray-100);
+  grid-column: 1 / -1; /* Bu kutunun grid içinde tüm satırı kaplamasını sağlar */
+}
+
+.custom-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.custom-section h3 span { color: var(--amber-500); }
+
+.custom-section p {
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+
+.custom-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.custom-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: var(--text-body);
+}
+
+.custom-list-item::before {
+  content: '✓';
+  color: var(--amber-500);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* --- Mobil & Tablet Uyumluluğu --- */
+
+/* Tablet Görünümü */
+@media (max-width: 1024px) {
+  section > .container {
+    gap: 24px;
+  }
+  .product-hero-card .card-bottom {
+    padding: 32px 24px;
+  }
+}
+
+/* Mobil Görünüm: Alt alta tek kart */
+@media (max-width: 768px) {
+  section > .container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .product-hero-card .card-top { 
+    padding: 32px 24px; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    gap: 20px; 
+  }
+  .product-hero-card .card-bottom { 
+    padding: 28px 24px; 
+  }
+  .custom-section { 
+    grid-template-columns: 1fr; 
+    padding: 32px 24px; 
+    gap: 28px; 
+  }
+}
