@@ -13,9 +13,9 @@ Bu proje, **Miya Software** şirketinin dijital dünyadaki yüzü olmak üzere g
 
 ## 🛠️ Kullanılan Teknolojiler
 Proje, temel web standartları kullanılarak geliştirilmiştir:
-- **HTML5** (%69.6)
-- **CSS3** (%26.3)
-- **JavaScript** (%4.1)
+- **HTML5** 
+- **CSS3** 
+- **JavaScript** 
 
 ## 📁 Proje Dosya Yapısı
 Depodaki dizin mimarisi şu şekildedir:
