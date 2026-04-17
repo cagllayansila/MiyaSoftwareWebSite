@@ -296,15 +296,41 @@ ul { list-style: none; }
   
 }
 
+  .btn-primary-services{
+  text-align: center;
+  background: var(--navy-700);
+  color: var(--gray-50);
+}
+
+.btn-primary-services:hover{
+  background: var(--navy-500);
+  transform: translateY(-2px);
+ box-shadow: var(--shadow-lg);
+  
+}
 .btn-primary {
   text-align: center;
-  background: var(--amber-500);
+  background: var(--navy-700);
   color: var(--gray-50);
   
 }
 
 .btn-primary:hover {
+  background: var(--navy-500);
+  transform: translateY(-2px);
+ box-shadow: var(--shadow-amber);
+  
+}
+
+.btn-primary-a{
+  text-align: center;
   background: var(--amber-400);
+  color: var(--gray-50);
+  
+}
+
+.btn-primary-a:hover {
+  background: var(--amber-100);
   transform: translateY(-2px);
  box-shadow: var(--shadow-amber);
   
