@@ -53,7 +53,7 @@ function injectNavbar(activeKey, isRoot = false) {
     const basePath = isRoot ? '' : '../';
     
     // Dil değiştirme butonu için hedef URL belirleme
-    const toggleTarget = lang === 'tr' ? '/en/index.html' : '/index.html';
+    const toggleTarget = lang === 'tr' ? '../en/index.html' : '../pages/index.html';
     const langLabel = lang === 'tr' ? 'EN' : 'TR';
 
     // Linkleri oluştururken root ve dil klasörüne göre href'leri düzenle
@@ -78,11 +78,11 @@ function injectNavbar(activeKey, isRoot = false) {
 
     const logoPng = isRoot ? 'images/miya_logo_2.png' : '../images/miya_logo_2.png';
     const logoSvg = isRoot ? 'images/miya-logo-2.svg' : '../images/miya-logo-2.svg';
-
+  // ${isRoot ? 'index.html' : '../index.html'}
     const navHTML = `
         <nav class="navbar" id="mainNavbar">
           <div class="container">
-            <a href="${isRoot ? 'index.html' : '../index.html'}" class="navbar-brand">
+            <a href="index.html" class="navbar-brand">
               <img src="${logoPng}" alt="miya" class="navbar-logo-2" onerror="this.onerror=null;this.src='${logoSvg}';" />
             </a>
             <div class="nav-links">${navLinks}</div>
@@ -116,7 +116,7 @@ function injectFooter(isRoot = false) {
         <div class="footer-grid">
           
           <div class="footer-brand">
-            <a href="${isRoot ? 'index.html' : '../index.html'}">
+            <a href='index.html' : '../index.html'}">
               <img src="${logoPng}" alt="miya" class="footer-logo-img" style="height: 120px; width: auto; margin-bottom: 20px; display: block;" />
             </a>
             <p class="footer-desc">${t.footerDesc}</p>
