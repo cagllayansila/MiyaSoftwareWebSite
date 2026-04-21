@@ -50,6 +50,11 @@
 
 html { scroll-behavior: smooth; font-size: 16px; }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   font-family: 'DM Sans', sans-serif;
   /* Default: on white backgrounds use dark text */
@@ -138,7 +143,6 @@ ul { list-style: none; }
 
 .navbar-brand span.brand-miya { color: var(--white); }
 .navbar-brand span.brand-dot { color: var(--amber-100); }
-
 .nav-links {
   display: flex;
   align-items: center;
@@ -161,7 +165,6 @@ ul { list-style: none; }
   background: rgba(255,255,255,0.08);
 }
 
-/* Active (current) nav item: force red and bold, even on hover */
 .nav-links a.active,
 .nav-links a.active:hover {
   color: var(--amber-100) !important;
@@ -174,6 +177,7 @@ ul { list-style: none; }
   align-items: center;
   gap: 12px;
 }
+
 
 .lang-btn {
   padding: 6px 14px;
@@ -698,19 +702,27 @@ section.bg-navy { background: var(--navy-800); }
 @media (max-width: 768px) {
   :root { --header-h: 64px; }
   section { padding: 72px 0; }
-
-  .nav-links, .nav-cta { display: none; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
   .hamburger { display: flex; }
-
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-
   .section-title { font-size: 1.6rem; }
 }
 
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
   .btn { padding: 12px 22px; font-size: 0.875rem; }
+} 
+
+
+.mobile-right { display: none; }
+
+@media (max-width: 768px) {
+  .mobile-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 }

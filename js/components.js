@@ -3,13 +3,13 @@
 const TRANSLATIONS = {
     tr: {
         nav: [
-            { label: 'Anasayfa', href: 'index.html', key: 'home' },
-            { label: 'Hakkımızda', href: 'tr/about.html', key: 'about' },
-            { label: 'Ürünlerimiz', href: 'tr/products.html', key: 'products' },
-            { label: 'Hizmetlerimiz', href: 'tr/services.html', key: 'services' },
-            { label: 'İnsan Kaynakları', href: 'tr/hr.html', key: 'hr' },
-            { label: 'Referanslar', href: 'tr/references.html', key: 'refs' },
-            { label: 'İletişim', href: 'tr/contact.html', key: 'contact' },
+            { label: 'Anasayfa', href: 'tr/anasayfa.html', key: 'home' },
+            { label: 'Hakkımızda', href: 'tr/hakkimizda.html', key: 'about' },
+            { label: 'Ürünlerimiz', href: 'tr/urunler.html', key: 'products' },
+            { label: 'Hizmetlerimiz', href: 'tr/hizmetler.html', key: 'services' },
+            { label: 'İnsan Kaynakları', href: 'tr/insankaynaklari.html', key: 'hr' },
+            { label: 'Referanslar', href: 'tr/referanslar.html', key: 'refs' },
+            { label: 'İletişim', href: 'tr/iletisim.html', key: 'contact' },
         ],
         cta: "Bize Ulaşın",
         footerDesc: "15+ yıllık deneyimle veritabanı yönetimi, süreç iyileştirme, yazılım geliştirme ve uygulama alanlarında yenilikçi çözümler üretiyoruz.",
@@ -17,11 +17,11 @@ const TRANSLATIONS = {
         footerPolicies: "Politikalar",
         footerContact: "İletişim",
         footerRights: "© 2020 Miya Donanım Eğitim Yazılım Danışmanlık. Tüm hakları saklıdır.",
-        privacyPolicy: "Gizlilik Politikası"
+        privacyPolicy: "BGYS Politikası"
     },
     en: {
         nav: [
-            { label: 'Home', href: 'index.html', key: 'home' },
+            { label: 'Home', href: 'home.html', key: 'home' },
             { label: 'About Us', href: 'about.html', key: 'about' },
             { label: 'Products', href: 'products.html', key: 'products' },
             { label: 'Services', href: 'services.html', key: 'services' },
@@ -35,7 +35,7 @@ const TRANSLATIONS = {
         footerPolicies: "Policies",
         footerContact: "Contact",
         footerRights: "© 2024 Miya Hardware Training Software Consulting. All rights reserved.",
-        privacyPolicy: "Privacy Policy"
+        privacyPolicy: "BGYS Policy"
     }
 };
 
@@ -50,7 +50,7 @@ function injectNavbar(activeKey, isRoot = false) {
     const basePath = isRoot ? '' : '../';
     
     // Dil değiştirme butonu için hedef URL belirleme
-    const toggleTarget = lang === 'tr' ? '../en/index.html' : '../tr/index.html';
+    const toggleTarget = lang === 'tr' ? '../en/home.html' : '../tr/anasayfa.html';
     const langLabel = lang === 'tr' ? 'EN' : 'TR';
 
     // Linkleri oluştururken root ve dil klasörüne göre href'leri düzenle
@@ -75,23 +75,25 @@ function injectNavbar(activeKey, isRoot = false) {
 
     const logoPng = isRoot ? 'images/miya_logo_2.png' : '../images/miya_logo_2.png';
     const logoSvg = isRoot ? 'images/miya-logo-2.svg' : '../images/miya-logo-2.svg';
-  // ${isRoot ? 'index.html' : '../index.html'}
-    const navHTML = `
-        <nav class="navbar" id="mainNavbar">
-          <div class="container">
-            <a href="index.html" class="navbar-brand">
-              <img src="${logoPng}" alt="miya" class="navbar-logo-2" onerror="this.onerror=null;this.src='${logoSvg}';" />
-            </a>
-            <div class="nav-links">${navLinks}</div>
-            <div class="nav-cta">
-              <a href="${toggleTarget}" class="lang-btn">${langLabel}</a>
-              <a href="${lang === 'en' ? (isRoot ? 'en/contact.html' : 'contact.html') : (isRoot ? 'tr/contact.html' : '../tr/contact.html')}" class="btn-contact-nav">${t.cta}</a>
-            </div>
-            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-          </div>
-        </nav>
-        <div class="mobile-nav" id="mobileNav">${navLinks}</div>
-    `;
+  const navHTML = `
+  <nav class="navbar" id="mainNavbar">
+    <div class="container">
+    <a href="${isRoot ? (lang === 'en' ? 'en/home.html' : 'tr/anasayfa.html') : (lang === 'en' ? 'home.html' : '../tr/anasayfa.html')}" class="navbar-brand">
+        <img src="${logoPng}" alt="miya" class="navbar-logo-2" onerror="this.onerror=null;this.src='${logoSvg}';" />
+      </a>
+      <div class="nav-links">${navLinks}</div>
+      <div class="nav-cta">
+        <a href="${toggleTarget}" class="lang-btn">${langLabel}</a>
+        <a href="${lang === 'en' ? (isRoot ? 'en/contact.html' : 'contact.html') : (isRoot ? 'tr/iletisim.html' : '../tr/iletisim.html')}" class="btn-contact-nav">${t.cta}</a>
+      </div>
+      <div class="mobile-right">
+        <a href="${toggleTarget}" class="lang-btn">${langLabel}</a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">${navLinks}</div>
+`;
 
     document.body.insertAdjacentHTML('afterbegin', navHTML);
     setupNavbarEvents();
@@ -104,8 +106,8 @@ function injectFooter(isRoot = false) {
     const logoPng = isRoot ? 'images/miya_logo.png' : '../images/miya_logo.png';
 
     const addressText = lang === 'tr' 
-        ? "Kuşçular Mah. 8035/1 Sk. No:2/12 <br> Urla / İzmir" 
-        : "Kuşçular Mah. 8035/1 St. No:2/12 <br> Urla / Izmir";
+        ? "Kuşçular Mah. 8035/1 Sk. No:12/2 <br> Urla / İzmir" 
+        : "Kuşçular Mah. 8035/1 St. No:12/2 <br> Urla / Izmir";
 
     const footerHTML = `
     <footer class="footer">
@@ -113,7 +115,7 @@ function injectFooter(isRoot = false) {
         <div class="footer-grid">
           
           <div class="footer-brand">
-            <a href='index.html' : '../index.html'}">
+          <a href='${isRoot ? (lang === 'en' ? 'en/home.html' : 'tr/anasayfa.html') : (lang === 'en' ? 'home.html' : '../tr/anasayfa.html')}'>
               <img src="${logoPng}" alt="miya" class="footer-logo-img" style="height: 120px; width: auto; margin-bottom: 20px; display: block;" />
             </a>
             <p class="footer-desc">${t.footerDesc}</p>
@@ -132,7 +134,7 @@ function injectFooter(isRoot = false) {
           <div class="footer-col">
             <h4>${t.footerPolicies}</h4>
             <ul>
-              <li><a href="https://miyayazilim.com.tr/files/BGYS-Politika-en.pdf" target="_blank">BGYS Policy</a></li>
+            
               <li><a href="https://miyayazilim.com.tr/files/BGYS-Politika-en.pdf" target="_blank">${t.privacyPolicy}</a></li>
             </ul>
           </div>
