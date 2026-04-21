@@ -1,25 +1,22 @@
-/* =============================================
-   MIYA YAZILIM - Shared Components JS
-   Navbar + Footer injection (Multi-language Support)
-   ============================================= */
+
 
 const TRANSLATIONS = {
     tr: {
         nav: [
             { label: 'Anasayfa', href: 'index.html', key: 'home' },
-            { label: 'Hakkımızda', href: 'pages/about.html', key: 'about' },
-            { label: 'Ürünlerimiz', href: 'pages/products.html', key: 'products' },
-            { label: 'Hizmetlerimiz', href: 'pages/services.html', key: 'services' },
-            { label: 'İnsan Kaynakları', href: 'pages/hr.html', key: 'hr' },
-            { label: 'Referanslar', href: 'pages/references.html', key: 'refs' },
-            { label: 'İletişim', href: 'pages/contact.html', key: 'contact' },
+            { label: 'Hakkımızda', href: 'tr/about.html', key: 'about' },
+            { label: 'Ürünlerimiz', href: 'tr/products.html', key: 'products' },
+            { label: 'Hizmetlerimiz', href: 'tr/services.html', key: 'services' },
+            { label: 'İnsan Kaynakları', href: 'tr/hr.html', key: 'hr' },
+            { label: 'Referanslar', href: 'tr/references.html', key: 'refs' },
+            { label: 'İletişim', href: 'tr/contact.html', key: 'contact' },
         ],
         cta: "Bize Ulaşın",
         footerDesc: "15+ yıllık deneyimle veritabanı yönetimi, süreç iyileştirme, yazılım geliştirme ve uygulama alanlarında yenilikçi çözümler üretiyoruz.",
         footerPages: "Sayfalar",
         footerPolicies: "Politikalar",
         footerContact: "İletişim",
-        footerRights: "© 2024 Miya Donanım Eğitim Yazılım Danışmanlık. Tüm hakları saklıdır.",
+        footerRights: "© 2020 Miya Donanım Eğitim Yazılım Danışmanlık. Tüm hakları saklıdır.",
         privacyPolicy: "Gizlilik Politikası"
     },
     en: {
@@ -53,7 +50,7 @@ function injectNavbar(activeKey, isRoot = false) {
     const basePath = isRoot ? '' : '../';
     
     // Dil değiştirme butonu için hedef URL belirleme
-    const toggleTarget = lang === 'tr' ? '../en/index.html' : '../pages/index.html';
+    const toggleTarget = lang === 'tr' ? '../en/index.html' : '../tr/index.html';
     const langLabel = lang === 'tr' ? 'EN' : 'TR';
 
     // Linkleri oluştururken root ve dil klasörüne göre href'leri düzenle
@@ -88,7 +85,7 @@ function injectNavbar(activeKey, isRoot = false) {
             <div class="nav-links">${navLinks}</div>
             <div class="nav-cta">
               <a href="${toggleTarget}" class="lang-btn">${langLabel}</a>
-              <a href="${lang === 'en' ? (isRoot ? 'en/contact.html' : 'contact.html') : (isRoot ? 'pages/contact.html' : '../pages/contact.html')}" class="btn-contact-nav">${t.cta}</a>
+              <a href="${lang === 'en' ? (isRoot ? 'en/contact.html' : 'contact.html') : (isRoot ? 'tr/contact.html' : '../tr/contact.html')}" class="btn-contact-nav">${t.cta}</a>
             </div>
             <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
           </div>
