@@ -1,130 +1,66 @@
 .refs-grid {
-      display: grid;
-       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      margin-bottom: 64px;
-    }
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 56px;
+}
 
-    .ref-card {
-      background: var(--white);
-      border: 1px solid var(--gray-100);
-      border-radius: var(--radius-lg);
-      padding: 36px 24px;
-      text-align: center;
-      transition: var(--transition);
-      cursor: default;
-    }
+.ref-card {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  text-align: center;
+  transition: var(--transition);
+  cursor: default;
+}
+.ref-card:hover {
+  border-color: var(--amber-300);
+  box-shadow: 0 8px 32px rgba(245,166,35,0.1);
+  transform: translateY(-6px);
+}
 
-    .ref-card:hover {
-      border-color: var(--amber-300);
-      box-shadow: 0 8px 32px rgba(245,166,35,0.1);
-      transform: translateY(-6px);
-    }
-
-    .ref-card-logo {
+.ref-card-logo {
   width: 100%;
-  max-width: 250px;
+  max-width: 200px;
   height: auto;
   aspect-ratio: 1;
   background: transparent;
-  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 16px;
-  padding: 0;
 }
-
 .ref-card-logo-img {
   width: 100%;
   height: auto;
-  max-width: 250px;
+  max-width: 200px;
   object-fit: contain;
   display: block;
 }
 
-    .ref-card h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text-dark);
-      margin-bottom: 6px;
-    }
+.ref-card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+.ref-card-sector {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
 
-    .ref-card-sector {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .ref-card-badge {
-      margin-top: 14px;
-      display: inline-block;
-    }
-
-    .testimonial-section {
-      background: var(--gray-50);
-    }
-
-    .testimonial-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--gray-100);
-      padding: 36px;
-      position: relative;
-    }
-
-    .testimonial-quote {
-      font-size: 3rem;
-      color: var(--amber-300);
-      font-family: 'Outfit', sans-serif;
-      font-weight: 800;
-      line-height: 1;
-      margin-bottom: 12px;
-    }
-
-    .testimonial-text {
-      font-size: 0.95rem;
-      color: var(--text-body);
-      line-height: 1.75;
-      margin-bottom: 24px;
-      font-style: italic;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .testimonial-avatar {
-      width: 44px; height: 44px;
-      background: var(--navy-700);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--amber-400);
-      font-weight: 800;
-      font-size: 0.9rem;
-      font-family: 'Outfit', sans-serif;
-    }
-
-    .testimonial-name {
-      font-weight: 700;
-      font-size: 0.9rem;
-      color: var(--text-dark);
-    }
-
-    .testimonial-role {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-   @media (max-width: 900px) {
+/* RESPONSIVE */
+@media (max-width: 900px) {
   .refs-grid { grid-template-columns: repeat(2, 1fr); }
-  }
+}
 
-  @media (max-width: 480px) {
-  .refs-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .ref-card { padding: 16px 10px; }
+@media (max-width: 480px) {
+  .refs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
+  .ref-card { padding: 16px 10px; }
+  .ref-card h3 { font-size: 0.82rem; }
+}

@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact – Miya Software</title>
+  <title>İletişim – Miya Yazılım</title>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/contact.css" />
-  <link rel="stylesheet" href="../css/main.css" />
 </head>
 <body>
   <div class="page-wrap">
 
     <div class="page-hero">
       <div class="container">
-        <h1>Let's <span>Talk</span> About Your Project</h1>
-        <p>Reach out to us for questions or demo requests. We will get back to you as soon as possible.</p>
+        <h1>Projenizi <span>Konuşalım</span></h1>
+        <p>Sorularınız veya demo talebiniz için bize ulaşın. En kısa sürede geri döneceğiz.</p>
       </div>
     </div>
 
@@ -25,21 +24,21 @@
           <!-- Info Side -->
           <div>
             <div class="contact-info-card">
-              <h3>Contact <span>Us</span></h3>
-              <p>Reach out to us to become a partner, request a demo, or ask any questions.</p>
+              <h3>Bize <span>Ulaşın</span></h3>
+              <p>İş ortağı olmak, demo talep etmek veya soru sormak için aşağıdaki kanallardan bize ulaşabilirsiniz.</p>
 
               <div class="contact-detail">
                 <div><img src="../images/home.jfif" alt="Location" style="width:35px;height:auto;border-radius:10px;" /></div>
                 <div>
-                  <div class="contact-detail-label">Address</div>
-                  <div class="contact-detail-value">Kuscular Mah. 8035/1 Sk.<br>No:2/12 Urla / İzmir</div>
+                  <div class="contact-detail-label">Adres</div>
+                  <div class="contact-detail-value">Kuşçular Mah. 8035/1 Sk.<br>No:12/2 Urla / İzmir</div>
                 </div>
               </div>
 
               <div class="contact-detail">
                 <div><img src="../images/maile.jfif" alt="Email" style="width:35px;height:auto;border-radius:10px;" /></div>
                 <div>
-                  <div class="contact-detail-label">Email</div>
+                  <div class="contact-detail-label">E-posta</div>
                   <div class="contact-detail-value">
                     <a href="mailto:info@miyayazilim.com.tr">info@miyayazilim.com.tr</a>
                   </div>
@@ -49,7 +48,7 @@
               <div class="contact-detail">
                 <div><img src="../images/website.jfif" alt="Website" style="width:30px;height:auto;border-radius:40px;" /></div>
                 <div>
-                  <div class="contact-detail-label">Website</div>
+                  <div class="contact-detail-label">Web Sitesi</div>
                   <div class="contact-detail-value">
                     <a href="https://miyayazilim.com.tr" target="_blank">miyayazilim.com.tr</a>
                   </div>
@@ -59,10 +58,10 @@
 
             <div style="margin-top:20px;">
               <div class="map-placeholder">
-                <img src="../images/locatıon.jfif" alt="Location" style="width:70px;height:auto;border-radius:40px;" />
-                <p>Kuscular Mah. 8035/1 Sk. No:2/12 <br> Urla / İzmir TURKIYE</p>
+                <img src="../images/locatıon.jfif" alt="Konum" style="width:70px;height:auto;border-radius:40px;" />
+                <p>Kuşçular Mah. 8035/1 Sk. No:12/2 <br> Urla / İzmir</p>
                 <a href="https://maps.google.com/?q=Urla+Izmir+Turkey" target="_blank" class="map-link">
-                  Open in Google Maps →
+                  Google Maps'te Aç →
                 </a>
               </div>
             </div>
@@ -71,83 +70,80 @@
           <!-- Form Side -->
           <div class="contact-form-wrap">
             <form id="contactForm" action="https://formsubmit.co/silacaglayan93@gmail.com" method="POST">
-              <h3>Send a <span>Message</span></h3>
-              <p class="form-subtitle">Fill out the form, and we will get back to you within 2-3 business days.</p>
+              <h3>Mesaj <span>Gönderin</span></h3>
+              <p class="form-subtitle">Formu doldurun, 2-3 iş günü içinde size geri dönelim.</p>
 
-              <input type="hidden" name="_subject" value="You have a message from miyayazilim.com.tr!">
+              <input type="hidden" name="_subject" value="miyayazilim.com.tr'den mesajiniz var!">
               <input type="hidden" name="_captcha" value="false">
               <input type="text" name="_honey" style="display:none">
 
               <div class="form-row">
                 <div class="form-group">
-                  <label for="fname">First Name *</label>
-                  <input type="text" id="fname" name="Ad" placeholder="First Name" required />
+                  <label for="fname">Ad *</label>
+                  <input type="text" id="fname" name="Ad" placeholder="Adınız" required />
                 </div>
                 <div class="form-group">
-                  <label for="lname">Last Name *</label>
-                  <input type="text" id="lname" name="Soyad" placeholder="Last Name" required />
+                  <label for="lname">Soyad *</label>
+                  <input type="text" id="lname" name="Soyad" placeholder="Soyadınız" required />
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group">
-                  <label for="email">Email *</label>
-                  <input type="email" id="email" name="Email" placeholder="email@company.com" required />
+                  <label for="email">E-posta *</label>
+                  <input type="email" id="email" name="Email" placeholder="email@sirket.com" required />
                 </div>
                 <div class="form-group">
-                  <label for="phone">Phone</label>
+                  <label for="phone">Telefon</label>
                   <input type="tel" id="phone" name="Telefon" placeholder="5xx xxx xx xx"
                     pattern="[0-9]{10,11}"
-                    title="Please enter your 10-11 digit phone number." />
+                    title="Lütfen 10-11 haneli telefon numaranızı giriniz." />
                 </div>
               </div>
 
               <div class="form-group">
-                <label for="company">Company Name</label>
-                <input type="text" id="company" name="Sirket" placeholder="Your company's name" maxlength="50" />
+                <label for="company">Şirket Adı</label>
+                <input type="text" id="company" name="Sirket" placeholder="Şirketinizin adı" maxlength="50" />
               </div>
 
               <div class="form-group">
-                <label for="subject">Subject *</label>
+                <label for="subject">Konu *</label>
                 <select id="subject" name="Konu" required>
-                  <option value="">Select a subject...</option>
-                  <option value="Demo Request">Demo Request</option>
-                  <option value="Product Information">Product Information</option>
-                  <option value="Service Request">Service Request</option>
-                  <option value="HR / Career">HR / Career</option>
-                  <option value="Technical Support">Technical Support</option>
-                  <option value="Other">Other</option>
+                  <option value="">Konu seçin...</option>
+                  <option value="Demo Talebi">Demo Talebi</option>
+                  <option value="Ürün Bilgisi">Ürün Bilgisi</option>
+                  <option value="Hizmet Talebi">Hizmet Talebi</option>
+                  <option value="İK / Kariyer">İK / Kariyer</option>
+                  <option value="Teknik Destek">Teknik Destek</option>
+                  <option value="Diğer">Diğer</option>
                 </select>
               </div>
 
               <div class="form-group">
-                <label for="message">Your Message *</label>
-                <textarea id="message" name="Mesaj"
-                  placeholder="Provide a brief overview of your project or question..." required></textarea>
+                <label for="message">Mesajınız *</label>
+                <textarea id="message" name="Mesaj" placeholder="Projeniz veya sorunuz hakkında kısaca bilgi verin..." required></textarea>
               </div>
 
               <div class="form-group captcha-container">
-                <label>Security Code *</label>
+                <label>Güvenlik Kodu *</label>
                 <div class="captcha-row">
-                  <canvas id="captchaCanvas" width="150" height="50" title="Click to refresh"></canvas>
+                  <canvas id="captchaCanvas" width="150" height="50" title="Yenilemek için tıkla"></canvas>
                   <span style="font-size:18px;color:#666;">→</span>
-                  <input type="text" id="userAnswer" name="captcha_input" placeholder="Enter code" required />
+                  <input type="text" id="userAnswer" name="captcha_input" placeholder="Kodu giriniz" required />
                 </div>
-                <p style="font-size:12px;color:#666;margin:0;">
-                  Please enter the characters shown in the image. Click the image to refresh.
-                </p>
+                <p style="font-size:12px;color:#666;margin:0;">Lütfen resimde gördüğünüz karakterleri kutuya giriniz. Okunmuyorsa resme tıklayarak yenileyebilirsiniz.</p>
               </div>
 
-              <button type="submit" class="form-submit" id="submitBtn">Send Message</button>
+              <button type="submit" class="form-submit" id="submitBtn">Gönder</button>
             </form>
 
             <div class="form-success" id="formSuccess" style="display:none;">
               <div class="success-icon">
-                <img src="../images/check.png" alt="Success" style="width:90px;height:auto;display:block;margin:0 auto;">
+                <img src="../images/check.png" alt="Başarılı" style="width:90px;height:auto;display:block;margin:0 auto;">
               </div>
-              <h4>Your Message Has Been Sent!</h4>
-              <p>We will get back to you within 2-3 business days. Thank you.</p>
-              <button onclick="resetForm()" class="btn btn-navy" style="margin-top:20px;">Send New Message</button>
+              <h4>Mesajınız İletildi!</h4>
+              <p>En kısa sürede sizinle iletişime geçeceğiz. Teşekkür ederiz.</p>
+              <button onclick="resetForm()" class="btn btn-navy" style="margin-top:20px;">Yeni Mesaj Gönder</button>
             </div>
           </div>
 
@@ -170,6 +166,7 @@
     function createCaptcha() {
       const canvas = document.getElementById('captchaCanvas');
       if (!canvas) return;
+      // Mobil genişliğe göre boyutla
       const w = Math.min(canvas.parentElement.offsetWidth - 150, 160);
       canvas.width  = Math.max(w, 120);
       canvas.height = 50;
@@ -199,18 +196,18 @@
 
       const userInput = document.getElementById('userAnswer').value.trim().toUpperCase();
       if (userInput !== generatedCaptcha) {
-        alert("Invalid security code! Please try again.");
+        alert("Güvenlik kodu hatalı! Lütfen tekrar deneyiniz.");
         createCaptcha();
         return false;
       }
 
       const companyValue = document.getElementById('company').value.trim();
       if (/(.)\1{4,}/.test(companyValue)) {
-        alert("Please enter a valid company name.");
+        alert("Lütfen geçerli bir şirket adı giriniz.");
         return false;
       }
 
-      submitBtn.innerText = 'Sending...';
+      submitBtn.innerText = 'Gönderiliyor...';
       submitBtn.disabled  = true;
 
       const formData = new FormData(contactForm);
@@ -225,12 +222,12 @@
           formSuccess.style.display = 'block';
           window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
-          alert('Activation required or server error. Please check your email.');
+          alert('Aktivasyon gerekli veya sunucu hatası. Lütfen mailinizi kontrol edin.');
         }
       })
-      .catch(error => alert('Error: ' + error.message))
+      .catch(error => alert('Hata: ' + error.message))
       .finally(() => {
-        submitBtn.innerText = 'Send Message';
+        submitBtn.innerText = 'Gönder';
         submitBtn.disabled  = false;
       });
       return false;

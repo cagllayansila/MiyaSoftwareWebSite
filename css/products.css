@@ -1,10 +1,11 @@
+/* Products page — 2 column grid */
 section > .container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Yan yana 2'li düzen */
-  gap: 32px; /* Kartlar arası boşluk */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
 }
 
-/* --- Tekil Kart Stilleri --- */
+/* Single card */
 .product-hero-card {
   background: var(--white);
   border-radius: var(--radius-xl);
@@ -12,26 +13,24 @@ section > .container {
   transition: var(--transition);
   display: flex;
   flex-direction: column;
-  height: 100%; /* Tüm kartların boyunu eşitler */
+  height: 100%;
 }
-
 .product-hero-card:hover {
-  box-shadow: 0 8px 24px var(--navy-800);
+  box-shadow: 0 8px 24px rgba(13,21,48,0.18);
   transform: translateY(-4px);
-  
 }
 
 .product-hero-card .card-top {
   background: linear-gradient(135deg, var(--navy-800), var(--navy-600));
-  padding: 32px 24px;
+  padding: 28px 24px;
   display: flex;
   align-items: center;
-  gap: 32px; /* 2'li düzende daha ferah boşluk */
+  gap: 20px;
   position: relative;
   overflow: hidden;
-  border-radius: 30px 30px 0 0; /* Sadece üst köşeleri yuvarla */
+  border-radius: 30px 30px 0 0;
+  flex-wrap: wrap;
 }
-
 .product-hero-card .card-top::before {
   content: '';
   position: absolute;
@@ -41,93 +40,180 @@ section > .container {
 }
 
 .product-main-icon {
-  width: 96px; height: 96px; /* Orijinal büyük ikon boyutu */
+  width: 80px; height: 80px;
   background: rgb(252, 252, 252);
   border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.6rem;
   flex-shrink: 0;
 }
-
 .product-main-icon img.product-icon-img {
-  width: 96px; /* Orijinal görsel boyutu */
-  height: 96px;
-  display:block;
+  width: 80px; height: 80px;
+  display: block;
   object-fit: contain;
-  border-radius: 23px;
+  border-radius: 20px;
 }
+
 .product-main-title {
   font-family: 'Outfit', sans-serif;
-  font-size: 1.7rem; /* Orijinal büyük başlık */
+  font-size: 1.5rem;
   font-weight: 800;
   color: var(--white);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
-
 .product-main-sub {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: rgba(255,255,255,0.6);
   line-height: 1.4;
 }
 
 .product-hero-card .card-bottom {
-  padding: 40px 48px; /* 2'li tasarıma uygun genişletilmiş iç boşluk */
-  flex-grow: 1; 
+  padding: 32px 28px;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
 }
-
 .product-hero-card .card-bottom p {
   color: var(--text-muted);
   line-height: 1.75;
-  margin-bottom: 24px;
-  font-size: 0.95rem;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
 }
 
 .feature-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 28px;
+  gap: 8px;
+  margin-bottom: 24px;
 }
-
 .feature-tag {
-  padding: 6px 16px;
+  padding: 5px 14px;
   background: var(--gray-50);
   border: 1px solid var(--gray-100);
   border-radius: 100px;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
   color: var(--gray-600);
 }
 
-/* Butonları içerik fark etmeksizin alta hizalar */
-.product-hero-card .card-bottom .btn {
-  margin-top: auto; 
+.product-hero-card .card-bottom .btn { margin-top: auto; }
+
+
+
+
+
+.man-card {
+  position: relative;
+  overflow: hidden;
 }
 
-/* --- Özel Geliştirme Bölümü --- */
+.man-card .card-bg-video {
+ position: absolute;
+  top: 0;
+  right: 0;       /* Videoyu en sağa yaslar */
+  width: 50%;     /* Kartın sadece sağ yarısını kaplamasını sağlar */
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.man-card .card-top,
+.man-card .card-bottom {
+  position: relative;
+  z-index: 1;
+  background: transparent !important;
+}
+
+.man-card .man-card-top {
+  background: linear-gradient(135deg, rgba(13,21,48,0.85), rgba(30,50,100,0.85)) !important;
+}
+
+.product-man-icon{
+  border-radius: 25px;
+  width: 100px;
+  height: auto;
+}/* MAN Yanında yatay kart - sol içerik güncellemesi */
+
+
+.yatay-ozel-kart {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 450px;
+  background-color: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  border: 1px solid var(--amber-500);
+  grid-column: 1 / -1;
+}
+
+.sol-icerik {
+  width: 70%;
+  flex-shrink: 0;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+.man-sol-ust {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.man-kart-baslik {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--navy-800);
+}
+
+.man-kart-altyazi {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.man-kart-aciklama {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+.sag-video video {
+  flex: 2;
+  width: 150%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center; /* bunu deneyin */
+}
+
+
+
+
+
+
+/* Custom section — spans full width */
 .custom-section {
   background: var(--gray-200);
   border-radius: var(--radius-xl);
-  padding: 56px;
+  padding: 48px 40px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
+  gap: 40px;
   align-items: center;
   border: 1px solid var(--gray-100);
-  grid-column: 1 / -1; /* Bu kutunun grid içinde tüm satırı kaplamasını sağlar */
+  grid-column: 1 / -1;
 }
-
 .custom-section h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin-bottom: 16px;
 }
-
 .custom-section h3 span { color: var(--amber-500); }
-
 .custom-section p {
   color: var(--text-muted);
   line-height: 1.75;
@@ -139,7 +225,6 @@ section > .container {
   flex-direction: column;
   gap: 12px;
 }
-
 .custom-list-item {
   display: flex;
   align-items: flex-start;
@@ -147,7 +232,6 @@ section > .container {
   font-size: 0.875rem;
   color: var(--text-body);
 }
-
 .custom-list-item::before {
   content: '✓';
   color: var(--amber-500);
@@ -156,36 +240,46 @@ section > .container {
   margin-top: 1px;
 }
 
-/* --- Mobil & Tablet Uyumluluğu --- */
-
-/* Tablet Görünümü */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
-  section > .container {
-    gap: 24px;
-  }
-  .product-hero-card .card-bottom {
-    padding: 32px 24px;
-  }
+  section > .container { gap: 20px; }
+  .product-hero-card .card-bottom { padding: 28px 20px; }
 }
 
-/* Mobil Görünüm: Alt alta tek kart */
 @media (max-width: 768px) {
   section > .container {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .product-hero-card .card-top {
+    padding: 24px 20px;
+    gap: 16px;
+  }
+  .product-main-icon {
+    width: 64px; height: 64px;
+  }
+  .product-main-icon img.product-icon-img {
+    width: 64px; height: 64px;
+  }
+  .product-main-title { font-size: 1.2rem; }
+  .product-hero-card .card-bottom { padding: 24px 20px; }
+  .custom-section {
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
     gap: 24px;
   }
-  .product-hero-card .card-top { 
-    padding: 32px 24px; 
-    flex-direction: column; 
-    align-items: flex-start; 
-    gap: 20px; 
+   .yatay-ozel-kart {
+    flex-direction: column;
+    height: auto;
   }
-  .product-hero-card .card-bottom { 
-    padding: 28px 24px; 
+
+  .sol-icerik {
+    width: 100%;
   }
-  .custom-section { 
-    grid-template-columns: 1fr; 
-    padding: 32px 24px; 
-    gap: 28px; 
+
+  .sag-video {
+    width: 100%;
+    height: 250px;
   }
 }
+
